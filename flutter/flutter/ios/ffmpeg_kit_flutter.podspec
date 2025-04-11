@@ -17,11 +17,11 @@ Pod::Spec.new do |s|
 
  #   s.default_subspec     = 'https'
  # FFmpegKit has been officially retired.Place iOS dependent libraries locally to solve compilation problems
-  s.default_subspec = 'ffmpeg_kit_ios_local'
+  s.default_subspec = 'audio-lts'
 
-  s.subspec 'ffmpeg_kit_ios_local' do |ss|
-    ss.vendored_frameworks = 'Frameworks/ffmpeg-kit-ios-audio/ffmpegkit.framework', 'Frameworks/ffmpeg-kit-ios-audio/libavdevice.framework', 'Frameworks/ffmpeg-kit-ios-audio/libavcodec.framework', 'Frameworks/ffmpeg-kit-ios-audio/libavfilter.framework', 'Frameworks/ffmpeg-kit-ios-audio/libavformat.framework', 'Frameworks/ffmpeg-kit-ios-audio/libavutil.framework', 'Frameworks/ffmpeg-kit-ios-audio/libswresample.framework', 'Frameworks/ffmpeg-kit-ios-audio/libswscale.framework'
-  end
+  # s.subspec 'ffmpeg_kit_ios_local' do |ss|
+  #   ss.vendored_frameworks = 'Frameworks/ffmpeg-kit-ios-audio/ffmpegkit.framework', 'Frameworks/ffmpeg-kit-ios-audio/libavdevice.framework', 'Frameworks/ffmpeg-kit-ios-audio/libavcodec.framework', 'Frameworks/ffmpeg-kit-ios-audio/libavfilter.framework', 'Frameworks/ffmpeg-kit-ios-audio/libavformat.framework', 'Frameworks/ffmpeg-kit-ios-audio/libavutil.framework', 'Frameworks/ffmpeg-kit-ios-audio/libswresample.framework', 'Frameworks/ffmpeg-kit-ios-audio/libswscale.framework'
+  # end
 
   s.dependency          'Flutter'
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
@@ -92,7 +92,15 @@ Pod::Spec.new do |s|
   s.subspec 'audio-lts' do |ss|
     ss.source_files         = 'Classes/**/*'
     ss.public_header_files  = 'Classes/**/*.h'
-    ss.dependency 'ffmpeg-kit-ios-audio', "6.0.LTS"
+    # ss.dependency 'ffmpeg-kit-ios-audio', "6.0.LTS"
+    ss.ios.vendored_frameworks =  'Frameworks/ffmpegkit.framework',
+                                  'Frameworks/libavcodec.framework',
+                                  'Frameworks/libavdevice.framework',
+                                  'Frameworks/libavfilter.framework',
+                                  'Frameworks/libavformat.framework',
+                                  'Frameworks/libavutil.framework',
+                                  'Frameworks/libswresample.framework',
+                                  'Frameworks/libswscale.framework'
     ss.ios.deployment_target = '10'
   end
 
