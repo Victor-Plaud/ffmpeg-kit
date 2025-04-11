@@ -93,14 +93,14 @@ Pod::Spec.new do |s|
     ss.source_files         = 'Classes/**/*'
     ss.public_header_files  = 'Classes/**/*.h'
     # ss.dependency 'ffmpeg-kit-ios-audio', "6.0.LTS"
-    ss.ios.vendored_frameworks =  'Frameworks/ffmpegkit.framework',
-                                  'Frameworks/libavcodec.framework',
-                                  'Frameworks/libavdevice.framework',
-                                  'Frameworks/libavfilter.framework',
-                                  'Frameworks/libavformat.framework',
-                                  'Frameworks/libavutil.framework',
-                                  'Frameworks/libswresample.framework',
-                                  'Frameworks/libswscale.framework'
+    ss.ios.vendored_frameworks =  'Frameworks/ffmpeg-kit-ios-audio/ffmpegkit.framework',
+                                  'Frameworks/ffmpeg-kit-ios-audio/libavcodec.framework',
+                                  'Frameworks/ffmpeg-kit-ios-audio/libavdevice.framework',
+                                  'Frameworks/ffmpeg-kit-ios-audio/libavfilter.framework',
+                                  'Frameworks/ffmpeg-kit-ios-audio/libavformat.framework',
+                                  'Frameworks/ffmpeg-kit-ios-audio/libavutil.framework',
+                                  'Frameworks/ffmpeg-kit-ios-audio/libswresample.framework',
+                                  'Frameworks/ffmpeg-kit-ios-audio/libswscale.framework'
     ss.ios.deployment_target = '10'
   end
 
