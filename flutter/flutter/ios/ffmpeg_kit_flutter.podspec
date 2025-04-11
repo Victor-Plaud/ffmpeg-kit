@@ -102,6 +102,14 @@ Pod::Spec.new do |s|
                                   'Frameworks/ffmpeg-kit-ios-audio/libswresample.framework',
                                   'Frameworks/ffmpeg-kit-ios-audio/libswscale.framework'
     ss.ios.deployment_target = '10'
+
+    s.prepare_command = <<-CMD
+      if [ ! -d "./Frameworks" ]; then
+        chmod +x ../scripts/setup_ios.sh
+        ../scripts/setup_ios.sh
+      fi
+    CMD
+
   end
 
   s.subspec 'video' do |ss|
