@@ -1,5 +1,37 @@
 # FFmpegKit ![GitHub release](https://img.shields.io/badge/release-v6.0-blue.svg) ![Maven Central](https://img.shields.io/maven-central/v/com.arthenica/ffmpeg-kit-min) ![CocoaPods](https://img.shields.io/cocoapods/v/ffmpeg-kit-ios-min) ![pub](https://img.shields.io/pub/v/ffmpeg_kit_flutter.svg) ![npm](https://img.shields.io/npm/v/ffmpeg-kit-react-native.svg)
 
+
+# FFmpeg-Kit AAR Binary from Local Maven (Only for Flutter - Android)
+
+## This project using latest flutter_3.27+ (stable)
+
+# AAR Binary Files Installation Guide
+
+This guide will walk you through the process of downloading, installing, and using the `ffmpeg-kit-audio` AAR file from your local Maven repository.
+
+### Download AAR Binary Files  
+
+You can download all available FFMPEG AAR binary files from the link below:  
+
+[Download AAR Files](https://drive.google.com/file/d/1rQnrMvo1JfgY1r42rrU5PxaSC6LQXSAX/view?usp=sharing)  
+
+### Install AAR File to Local Maven  
+
+Make sure your system has Maven installed.  
+
+Run the following command to install the AAR file to your local Maven repository:  
+
+```sh
+mvn install:install-file \
+  -Dfile=ffmpeg-kit-audio-6.0-2.LTS.aar \
+  -DgroupId=com.arthenica \
+  -DartifactId=ffmpeg-kit-audio \
+  -Dversion=6.0-2.LTS \
+  -Dpackaging=aar
+```
+
+
+
 <img src="https://github.com/arthenica/ffmpeg-kit/blob/main/docs/assets/ffmpeg-kit-icon-v9.png" width="240">
 
 `FFmpegKit` is a collection of tools to use `FFmpeg` in `Android`, `iOS`, `Linux`, `macOS`, `tvOS`, `Flutter` and `React Native` applications.
