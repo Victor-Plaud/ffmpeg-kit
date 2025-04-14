@@ -1,5 +1,6 @@
 buildscript {
     repositories {
+        mavenLocal()
         google()
         mavenCentral()
     }
@@ -11,8 +12,10 @@ buildscript {
 
 rootProject.allprojects {
     repositories {
+        mavenLocal()
         google()
         mavenCentral()
+
     }
 }
 
@@ -50,9 +53,12 @@ android {
 dependencies {
     implementation 'androidx.annotation:annotation:1.5.0'
 
-    compileOnly files('./libs/ffmpeg-kit-audio-6.0-2.LTS.aar')
+    implementation 'com.arthenica:ffmpeg-kit-audio:6.0-2.LTS'
 
-    implementation files('./libs/smart-exception-java-0.2.1.jar')
-    implementation files('./libs/smart-exception-common-0.2.1.jar')
+
+//    implementation files('./libs/ffmpeg-kit-audio-6.0-2.LTS.aar')
+//
+//    implementation files('./libs/smart-exception-java-0.2.1.jar')
+//    implementation files('./libs/smart-exception-common-0.2.1.jar')
 
 }
